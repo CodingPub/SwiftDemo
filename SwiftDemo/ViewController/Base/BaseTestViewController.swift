@@ -26,8 +26,8 @@ class BaseTestViewController: UIViewController {
         
         if let indexPath = autoClickIndexPath {
             autoClickIndexPath = nil
-            if indexPath.section < self.numberOfSections(in: tableView)
-                && indexPath.row < self.tableView(tableView, numberOfRowsInSection: indexPath.section) {
+            if indexPath.section < numberOfSections(in: tableView)
+                && indexPath.row < tableView(tableView, numberOfRowsInSection: indexPath.section) {
                 tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
                 tableView(tableView, didSelectRowAt: indexPath)
             }

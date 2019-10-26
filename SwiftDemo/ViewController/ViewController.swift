@@ -30,8 +30,9 @@ class ViewController: BaseTestViewController {
     func createTestSection() -> TestSectionModel {
         var array = [TestCellModel]()
         
-        array.append(TestCellModel(title: "Simple Test", operation: {
-            print("Hello world")
+        array.append(TestCellModel(title: "Test Model", operation: {
+            let ctrl = TestModelViewController()
+            self.navigationController?.pushViewController(ctrl, animated: true)
         }))
         
         return TestSectionModel(title: "Test", items: array)

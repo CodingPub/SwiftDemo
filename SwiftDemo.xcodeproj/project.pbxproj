@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		174BB74223632C4900A2FC24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB74123632C4900A2FC24 /* AppDelegate.swift */; };
-		174BB74423632C4900A2FC24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB74323632C4900A2FC24 /* SceneDelegate.swift */; };
 		174BB74623632C4900A2FC24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB74523632C4900A2FC24 /* ViewController.swift */; };
 		174BB74923632C4900A2FC24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174BB74723632C4900A2FC24 /* Main.storyboard */; };
 		174BB74B23632C4B00A2FC24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174BB74A23632C4B00A2FC24 /* Assets.xcassets */; };
@@ -16,13 +15,13 @@
 		174BB75823632CDB00A2FC24 /* TestCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB75723632CDB00A2FC24 /* TestCellModel.swift */; };
 		174BB75A23632D3800A2FC24 /* TestSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB75923632D3800A2FC24 /* TestSectionModel.swift */; };
 		174BB75C23632D8400A2FC24 /* BaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB75B23632D8400A2FC24 /* BaseTestViewController.swift */; };
+		174BB75E23645D9800A2FC24 /* TestModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB75D23645D9700A2FC24 /* TestModelViewController.swift */; };
 		AC345E57AB31FF7E1A8ED90B /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 970DE9AB56476DCB5249D8EA /* Pods_SwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		174BB73E23632C4900A2FC24 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174BB74123632C4900A2FC24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		174BB74323632C4900A2FC24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		174BB74523632C4900A2FC24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		174BB74823632C4900A2FC24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		174BB74A23632C4B00A2FC24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +30,7 @@
 		174BB75723632CDB00A2FC24 /* TestCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCellModel.swift; sourceTree = "<group>"; };
 		174BB75923632D3800A2FC24 /* TestSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSectionModel.swift; sourceTree = "<group>"; };
 		174BB75B23632D8400A2FC24 /* BaseTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestViewController.swift; sourceTree = "<group>"; };
+		174BB75D23645D9700A2FC24 /* TestModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModelViewController.swift; sourceTree = "<group>"; };
 		1C72B5A8551AC528B9A52107 /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		970DE9AB56476DCB5249D8EA /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3E2EFE08B9041F49A05EA4 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				174BB74123632C4900A2FC24 /* AppDelegate.swift */,
-				174BB74323632C4900A2FC24 /* SceneDelegate.swift */,
 				174BB75523632C5B00A2FC24 /* ViewController */,
 				174BB74723632C4900A2FC24 /* Main.storyboard */,
 				174BB74A23632C4B00A2FC24 /* Assets.xcassets */,
@@ -85,6 +84,7 @@
 			children = (
 				174BB75623632C6800A2FC24 /* Base */,
 				174BB74523632C4900A2FC24 /* ViewController.swift */,
+				174BB75D23645D9700A2FC24 /* TestModelViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -105,7 +105,6 @@
 				EE3E2EFE08B9041F49A05EA4 /* Pods-SwiftDemo.debug.xcconfig */,
 				1C72B5A8551AC528B9A52107 /* Pods-SwiftDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -232,9 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174BB75E23645D9800A2FC24 /* TestModelViewController.swift in Sources */,
 				174BB74623632C4900A2FC24 /* ViewController.swift in Sources */,
 				174BB74223632C4900A2FC24 /* AppDelegate.swift in Sources */,
-				174BB74423632C4900A2FC24 /* SceneDelegate.swift in Sources */,
 				174BB75A23632D3800A2FC24 /* TestSectionModel.swift in Sources */,
 				174BB75823632CDB00A2FC24 /* TestCellModel.swift in Sources */,
 				174BB75C23632D8400A2FC24 /* BaseTestViewController.swift in Sources */,
@@ -385,6 +384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TEXZU2MESD;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -404,6 +404,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TEXZU2MESD;
 				INFOPLIST_FILE = SwiftDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
