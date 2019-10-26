@@ -11,8 +11,8 @@ import UIKit
 typealias TestBlock = () -> Void
 
 class TestCellModel: NSObject {
-    var title: String!
-    var operation: TestBlock!
+    var title: String
+    var operation: TestBlock
     
     init(title: String, operation: @escaping TestBlock) {
         self.title = title

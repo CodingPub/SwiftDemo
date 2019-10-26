@@ -14,7 +14,7 @@ class ViewController: BaseTestViewController {
         super.viewDidLoad()
         
         #if true
-        #warning("测试")
+        #warning("快速测试")
         autoClickIndexPath = IndexPath(row: 0, section: 0)
         #endif
     }
@@ -34,6 +34,6 @@ class ViewController: BaseTestViewController {
             print("Hello world")
         }))
         
-        return TestSectionModel(title: "Test", items: array);
+        return TestSectionModel(title: "Test", items: array)
     }
 }

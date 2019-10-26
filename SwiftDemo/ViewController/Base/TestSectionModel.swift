@@ -9,7 +9,7 @@
 import UIKit
 
 class TestSectionModel: NSObject {
-    var title: String!
+    var title: String
     var items: [TestCellModel]
     
     init(title: String, items: [TestCellModel]) {

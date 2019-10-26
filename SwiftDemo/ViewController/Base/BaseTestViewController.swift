@@ -36,7 +36,7 @@ class BaseTestViewController: UIViewController {
     }
     
     func createSections() -> [TestSectionModel] {
-        return [];
+        return []
     }
     
     func createViews() {
@@ -58,9 +58,9 @@ extension BaseTestViewController {
 
 extension BaseTestViewController: UITableViewDataSource, UITableViewDelegate {
     func createTableView() -> UITableView {
-        let tableView = UITableView(frame: .zero, style: .plain);
-        tableView.dataSource = self;
-        tableView.delegate = self;
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCellIDentifier")
         return tableView
     }
@@ -70,14 +70,18 @@ extension BaseTestViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections[section].items.count;
+        return sections[section].items.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].title
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCellIDentifier", for: indexPath)
         
         let item = itemAtIndexPath(indexPath)
-        cell.textLabel?.text = "\(indexPath.section)-\(indexPath.row) \(item.title ?? "??")"
+        cell.textLabel?.text = "\(indexPath.section)-\(indexPath.row) \(item.title)"
         
         return cell
     }
@@ -86,11 +90,6 @@ extension BaseTestViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let item = itemAtIndexPath(indexPath)
-        guard let operation = item.operation else {
-            print("Something wrong!")
-            return
-        }
-        
-        operation()
+        item.operation()
     }
 }
