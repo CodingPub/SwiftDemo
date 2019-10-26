@@ -19,7 +19,7 @@ class ViewController: BaseTestViewController {
         #endif
     }
     
-    override func createSections() -> [TestSectionModel] {
+    override func generateSections() -> [TestSectionModel] {
         var sections = [TestSectionModel]()
         
         sections.append(createTestSection())

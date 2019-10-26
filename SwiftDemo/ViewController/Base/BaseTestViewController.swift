@@ -11,15 +11,14 @@ import SnapKit
 
 class BaseTestViewController: UIViewController {
     
-    var tableView: UITableView!
-    var sections: [TestSectionModel]!
+    lazy var tableView = createTableView()
+    lazy var sections = generateSections()
     var autoClickIndexPath: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sections = createSections()
-        createViews()
+        setupViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,12 +34,11 @@ class BaseTestViewController: UIViewController {
         }
     }
     
-    func createSections() -> [TestSectionModel] {
+    func generateSections() -> [TestSectionModel] {
         return []
     }
     
-    func createViews() {
-        tableView = createTableView()
+    func setupViews() {
         view.addSubview(tableView)
         
         tableView.snp.makeConstraints { (make) in
