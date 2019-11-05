@@ -13,9 +13,11 @@ class ViewController: BaseTestViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: .didEnterBackground, name: UIApplication.didEnterBackgroundNotification, object: nil)
+        
         #if true
         #warning("快速测试")
-        autoClickIndexPath = IndexPath(row: 0, section: 0)
+        autoClickIndexPath = IndexPath(row: 1, section: 0)
         #endif
     }
     
@@ -32,14 +34,22 @@ class ViewController: BaseTestViewController {
         
         array.append(TestCellModel(title: "Test Model", operation: {
             let ctrl = TestModelViewController()
-            pushViewController(ctrl)
+            self.pushViewController(ctrl)
         }))
         
         array.append(TestCellModel(title: "Test Notification", operation: {
             let ctrl = TestNotificationViewController()
-            pushViewController(ctrl)
+            self.pushViewController(ctrl)
         }))
         
         return TestSectionModel(title: "Test", items: array)
     }
+    
+    @objc func didEnterBackground(notification: Notification) {
+        print("ViewController 进入后台")
+    }
+}
+
+fileprivate extension Selector {
+    static let didEnterBackground = #selector(ViewController.didEnterBackground)
 }

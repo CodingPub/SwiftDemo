@@ -9,12 +9,22 @@
 import UIKit
 
 class TestNotificationViewController: BaseTestViewController {
-
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self);
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(forName: .NSExtensionHostDidEnterBackground, object: nil, queue: OperationQueue.main) { (notification) in
-            print("程序进入到后台了")
-        }
+        NotificationCenter.default.addObserver(self, selector: .didEnterBackground, name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
+    
+    @objc func didEnterBackground(notification: Notification) {
+        print("TestNotificationViewController 进入后台")
+    }
+}
+
+fileprivate extension Selector {
+    static let didEnterBackground = #selector(TestNotificationViewController.didEnterBackground)
 }

@@ -93,7 +93,7 @@ extension BaseTestViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension BaseTestViewController {
-    func pushViewController(viewController : UIViewController) {
+    func pushViewController(_ viewController : UIViewController) {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
