@@ -32,7 +32,12 @@ class ViewController: BaseTestViewController {
         
         array.append(TestCellModel(title: "Test Model", operation: {
             let ctrl = TestModelViewController()
-            self.navigationController?.pushViewController(ctrl, animated: true)
+            pushViewController(ctrl)
+        }))
+        
+        array.append(TestCellModel(title: "Test Notification", operation: {
+            let ctrl = TestNotificationViewController()
+            pushViewController(ctrl)
         }))
         
         return TestSectionModel(title: "Test", items: array)
