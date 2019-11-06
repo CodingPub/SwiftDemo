@@ -32,17 +32,23 @@ class ViewController: BaseTestViewController {
     func createTestSection() -> TestSectionModel {
         var array = [TestCellModel]()
         
-        array.append(TestCellModel(title: "Test Model", operation: {
+        array.append(TestCellModel(title: "Test Model", operation: { [weak self] in
+            guard let self = self else { return }
+            
             let ctrl = TestModelViewController()
             self.pushViewController(ctrl)
         }))
         
-        array.append(TestCellModel(title: "Test Notification", operation: {
+        array.append(TestCellModel(title: "Test Notification", operation: { [weak self] in
+            guard let self = self else { return }
+            
             let ctrl = TestNotificationViewController()
             self.pushViewController(ctrl)
         }))
         
-        array.append(TestCellModel(title: "Test Weak", operation: {
+        array.append(TestCellModel(title: "Test Weak", operation: { [weak self] in
+            guard let self = self else { return }
+            
             let ctrl = TestWeakViewController()
             self.pushViewController(ctrl)
         }))

@@ -31,11 +31,15 @@ class TestNotificationViewController: BaseTestViewController {
     func createTestSection() -> TestSectionModel {
         var array = [TestCellModel]()
         
-        array.append(TestCellModel(title: "监听自定义通知", operation: {
+        array.append(TestCellModel(title: "监听自定义通知", operation: { [weak self] in
+            guard let self = self else { return }
+            
             NotificationCenter.default.addObserver(self, selector: .receiveCustomNotification, name: .CustomNotification, object: nil)
         }))
         
-        array.append(TestCellModel(title: "移除自定义通知", operation: {
+        array.append(TestCellModel(title: "移除自定义通知", operation: { [weak self] in
+            guard let self = self else { return }
+            
             NotificationCenter.default.removeObserver(self, name: .CustomNotification, object: nil);
         }))
         

@@ -10,6 +10,10 @@ import UIKit
 
 class TestModelViewController: BaseTestViewController {
 
+    deinit {
+        print("\(self) deinit")
+    }
+    
     override func generateSections() -> [TestSectionModel] {
         var sections = [TestSectionModel]()
         
@@ -21,7 +25,9 @@ class TestModelViewController: BaseTestViewController {
     func createTestSection() -> TestSectionModel {
         var array = [TestCellModel]()
         
-        array.append(TestCellModel(title: "simpleDict2Model", operation: {
+        array.append(TestCellModel(title: "simpleDict2Model", operation: { [weak self] in
+            guard let self = self else { return }
+            
             self.simpleDict2Model()
         }))
         
