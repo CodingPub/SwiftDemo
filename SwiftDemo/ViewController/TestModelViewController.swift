@@ -10,11 +10,6 @@ import UIKit
 
 class TestModelViewController: BaseTestViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
     override func generateSections() -> [TestSectionModel] {
         var sections = [TestSectionModel]()
         
