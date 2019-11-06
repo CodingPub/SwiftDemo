@@ -11,7 +11,7 @@ import UIKit
 class TestSectionModel {
     var title: String
     var items: [TestCellModel]
-    
+
     init(title: String, items: [TestCellModel]) {
         self.title = title
         self.items = items

@@ -6,42 +6,41 @@
 //  Copyright © 2019 Xiaobin Lin. All rights reserved.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 class BaseTestViewController: UIViewController {
-    
     lazy var tableView = createTableView()
     lazy var sections = generateSections()
     var autoClickIndexPath: IndexPath?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupViews()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         if let indexPath = autoClickIndexPath {
             autoClickIndexPath = nil
-            if indexPath.section < numberOfSections(in: tableView)
-                && indexPath.row < tableView(tableView, numberOfRowsInSection: indexPath.section) {
+            if indexPath.section < numberOfSections(in: tableView),
+                indexPath.row < tableView(tableView, numberOfRowsInSection: indexPath.section) {
                 tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
                 tableView(tableView, didSelectRowAt: indexPath)
             }
         }
     }
-    
+
     func generateSections() -> [TestSectionModel] {
         return []
     }
-    
+
     func setupViews() {
         view.addSubview(tableView)
-        
-        tableView.snp.makeConstraints { (make) in
+
+        tableView.snp.makeConstraints { make in
             make.edges.equalTo(self.view)
         }
     }
@@ -62,38 +61,38 @@ extension BaseTestViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCellIDentifier")
         return tableView
     }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
+
+    func numberOfSections(in _: UITableView) -> Int {
         return sections.count
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].items.count
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+
+    func tableView(_: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].title
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCellIDentifier", for: indexPath)
-        
+
         let item = itemAtIndexPath(indexPath)
         cell.textLabel?.text = "\(indexPath.section)-\(indexPath.row) \(item.title)"
-        
+
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         let item = itemAtIndexPath(indexPath)
         item.operation()
     }
 }
 
 extension BaseTestViewController {
-    func pushViewController(_ viewController : UIViewController) {
-        self.navigationController?.pushViewController(viewController, animated: true)
+    func pushViewController(_ viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

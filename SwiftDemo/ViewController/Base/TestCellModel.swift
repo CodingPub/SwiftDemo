@@ -13,7 +13,7 @@ typealias TestBlock = () -> Void
 class TestCellModel {
     var title: String
     var operation: TestBlock
-    
+
     init(title: String, operation: @escaping TestBlock) {
         self.title = title
         self.operation = operation
