@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TestSectionModel: NSObject {
+class TestSectionModel {
     var title: String
     var items: [TestCellModel]
     

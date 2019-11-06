@@ -10,7 +10,7 @@ import UIKit
 
 typealias TestBlock = () -> Void
 
-class TestCellModel: NSObject {
+class TestCellModel {
     var title: String
     var operation: TestBlock
     

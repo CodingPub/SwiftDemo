@@ -22,11 +22,7 @@ class ViewController: BaseTestViewController {
     }
     
     override func generateSections() -> [TestSectionModel] {
-        var sections = [TestSectionModel]()
-        
-        sections.append(createTestSection())
-        
-        return sections
+        return [createTestSection()]
     }
     
     func createTestSection() -> TestSectionModel {
