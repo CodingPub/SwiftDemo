@@ -89,16 +89,23 @@ class TestBezierPathViewController: UIViewController {
         path6.addQuadCurve(to: CGPoint(x: 200, y: 400), controlPoint: CGPoint(x: 100, y: 450))
         self.createlayer(path: path6)
         
+        let path7 = UIBezierPath(roundedRect: CGRect(x: 20, y: 460, width: 80, height: 80), cornerRadius: 3)
+        self.createlayer(path: path7)
+        
         // 进度圆角矩形
         let progressView = RoundProgressView(frame: CGRect(x: 20, y: 460, width: 80, height: 80))
-        progressView.progress = 0.5
+        progressView.progress = 0.2
         progressView.borderColor = UIColor.orange
-        progressView.cornerRadius = 6;
+        progressView.cornerRadius = 3;
         progressView.borderWidth = 2
         self.view.addSubview(progressView)
         
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            progressView.progress = 0.5
+        }
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-            progressView.progress = 0.8
+            progressView.progress = 1
         }
     }
     
@@ -169,34 +176,45 @@ class RoundProgressView : UIView {
         shapLayer.strokeColor = borderColor.cgColor
         shapLayer.fillColor = UIColor.clear.cgColor
         shapLayer.lineWidth = borderWidth
-        maskLayer.path = maskPath.cgPath
+        
+        CATransaction.begin()
+        CATransaction.setDisableActions(false)
+        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: .easeInEaseOut))
+        CATransaction.setAnimationDuration(0.3)
+        shapLayer.strokeEnd = progress
+        CATransaction.commit()
     }
     
     fileprivate func commonInit() {
-        shapLayer.mask = maskLayer
         self.layer.addSublayer(shapLayer)
     }
     
     private let shapLayer = CAShapeLayer()
-    private let maskLayer = CAShapeLayer()
     
     private var shapPath : UIBezierPath {
-        return UIBezierPath(roundedRect: self.bounds, cornerRadius: self.cornerRadius)
-    }
-    
-    private var maskPath : UIBezierPath {
-        let frame = self.bounds
+        let raduis = self.cornerRadius
         
-        let clipPath = UIBezierPath()
-        let clipCenter = CGPoint(x: frame.midX, y: frame.midY)
-        let clipRadius = frame.width
-        clipPath.move(to: clipCenter)
-        clipPath.addLine(to: clipCenter.applying(CGAffineTransform(translationX: 0, y: -clipRadius)))
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: self.bounds.midX, y: 0))
         
-        let angle = CGFloat.pi / 180
-        clipPath.addArc(withCenter: clipCenter, radius: clipRadius, startAngle: -90*angle, endAngle: (360*progress-90)*angle, clockwise: true)
-        clipPath.close()
+        path.addLine(to: CGPoint(x: self.bounds.maxX - raduis, y: 0))
         
-        return clipPath.reversing()
+        path.addQuadCurve(to: CGPoint(x: self.bounds.maxX, y: raduis), controlPoint: CGPoint(x: self.bounds.maxX, y: 0))
+        
+        path.addLine(to: CGPoint(x: self.bounds.maxX, y: self.bounds.maxY - raduis))
+        
+        path.addQuadCurve(to: CGPoint(x: self.bounds.maxX - raduis, y: self.bounds.maxY), controlPoint: CGPoint(x: self.bounds.maxX, y: self.bounds.maxY))
+        
+        path.addLine(to: CGPoint(x: self.bounds.minX + raduis, y: self.bounds.maxY))
+        
+        path.addQuadCurve(to: CGPoint(x: self.bounds.minX, y: self.bounds.maxY - raduis), controlPoint: CGPoint(x: 0, y: self.bounds.maxY))
+        
+        path.addLine(to: CGPoint(x: self.bounds.minX, y: self.bounds.minY + raduis))
+        
+        path.addQuadCurve(to: CGPoint(x: self.bounds.minX + raduis, y: self.bounds.minY), controlPoint: CGPoint(x: 0, y: 0))
+        
+        path.close()
+        
+        return path
     }
 }
