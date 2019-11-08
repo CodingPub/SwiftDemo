@@ -16,7 +16,7 @@ class ViewController: BaseTestViewController {
 
         #if true
             #warning("快速测试")
-            autoClickIndexPath = IndexPath(row: 2, section: 0)
+            autoClickIndexPath = IndexPath(row: 4, section: 0)
         #endif
     }
 
@@ -40,11 +40,25 @@ class ViewController: BaseTestViewController {
             let ctrl = TestNotificationViewController()
             self.pushViewController(ctrl)
         }))
-
+        
         array.append(TestCellModel(title: "Test Weak", operation: { [weak self] in
             guard let self = self else { return }
 
             let ctrl = TestWeakViewController()
+            self.pushViewController(ctrl)
+        }))
+        
+        array.append(TestCellModel(title: "Test API", operation: { [weak self] in
+            guard let self = self else { return }
+
+            let ctrl = TestAPIViewController()
+            self.pushViewController(ctrl)
+        }))
+        
+        array.append(TestCellModel(title: "BezierPath", operation: { [weak self] in
+            guard let self = self else { return }
+
+            let ctrl = TestBezierPathViewController()
             self.pushViewController(ctrl)
         }))
 

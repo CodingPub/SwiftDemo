@@ -17,6 +17,8 @@
 		174BB75C23632D8400A2FC24 /* BaseTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB75B23632D8400A2FC24 /* BaseTestViewController.swift */; };
 		174BB75E23645D9800A2FC24 /* TestModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174BB75D23645D9700A2FC24 /* TestModelViewController.swift */; };
 		AC345E57AB31FF7E1A8ED90B /* Pods_SwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 970DE9AB56476DCB5249D8EA /* Pods_SwiftDemo.framework */; };
+		D00552772374FE4E009B09B7 /* TestAPIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00552762374FE4E009B09B7 /* TestAPIViewController.swift */; };
+		D0055279237509C0009B09B7 /* TestBezierPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0055278237509C0009B09B7 /* TestBezierPathViewController.swift */; };
 		D01E25A123717F76005B3ACB /* TestNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01E25A023717F76005B3ACB /* TestNotificationViewController.swift */; };
 		D0D02285237266D7004D5F24 /* TestWeakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D02284237266D7004D5F24 /* TestWeakViewController.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,8 @@
 		174BB75D23645D9700A2FC24 /* TestModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModelViewController.swift; sourceTree = "<group>"; };
 		1C72B5A8551AC528B9A52107 /* Pods-SwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.release.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		970DE9AB56476DCB5249D8EA /* Pods_SwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D00552762374FE4E009B09B7 /* TestAPIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPIViewController.swift; sourceTree = "<group>"; };
+		D0055278237509C0009B09B7 /* TestBezierPathViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBezierPathViewController.swift; sourceTree = "<group>"; };
 		D01E25A023717F76005B3ACB /* TestNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNotificationViewController.swift; sourceTree = "<group>"; };
 		D0D02284237266D7004D5F24 /* TestWeakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWeakViewController.swift; sourceTree = "<group>"; };
 		EE3E2EFE08B9041F49A05EA4 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				174BB75D23645D9700A2FC24 /* TestModelViewController.swift */,
 				D01E25A023717F76005B3ACB /* TestNotificationViewController.swift */,
 				D0D02284237266D7004D5F24 /* TestWeakViewController.swift */,
+				D00552762374FE4E009B09B7 /* TestAPIViewController.swift */,
+				D0055278237509C0009B09B7 /* TestBezierPathViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -240,10 +246,12 @@
 				174BB75E23645D9800A2FC24 /* TestModelViewController.swift in Sources */,
 				174BB74623632C4900A2FC24 /* ViewController.swift in Sources */,
 				174BB74223632C4900A2FC24 /* AppDelegate.swift in Sources */,
+				D00552772374FE4E009B09B7 /* TestAPIViewController.swift in Sources */,
 				D01E25A123717F76005B3ACB /* TestNotificationViewController.swift in Sources */,
 				174BB75A23632D3800A2FC24 /* TestSectionModel.swift in Sources */,
 				174BB75823632CDB00A2FC24 /* TestCellModel.swift in Sources */,
 				D0D02285237266D7004D5F24 /* TestWeakViewController.swift in Sources */,
+				D0055279237509C0009B09B7 /* TestBezierPathViewController.swift in Sources */,
 				174BB75C23632D8400A2FC24 /* BaseTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
