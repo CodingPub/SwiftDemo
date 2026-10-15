@@ -23,6 +23,7 @@
 		D0D02285237266D7004D5F24 /* TestWeakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D02284237266D7004D5F24 /* TestWeakViewController.swift */; };
 		A1B2C3D4E5F6G7H800ABCDEF /* TestPhotoAlbumIncrementalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F6G7H801ABCDEF /* TestPhotoAlbumIncrementalViewController.swift */; };
 		B2C3D4E5F6G7H800ABCDEF0 /* TestPhotoAlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6G7H800ABCDEF1 /* TestPhotoAlbumListViewController.swift */; };
+		C3D4E5F6A7B8C9D0E1F2A3B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4E5F6A7B8C9D0E1F2A3B5 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 D0D02284237266D7004D5F24 /* TestWeakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestWeakViewController.swift; sourceTree = "<group>"; };
 		A1B2C3D4E5F6G7H801ABCDEF /* TestPhotoAlbumIncrementalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPhotoAlbumIncrementalViewController.swift; sourceTree = "<group>"; };
 		B2C3D4E5F6G7H800ABCDEF1 /* TestPhotoAlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPhotoAlbumListViewController.swift; sourceTree = "<group>"; };
+		C3D4E5F6A7B8C9D0E1F2A3B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE3E2EFE08B9041F49A05EA4 /* Pods-SwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftDemo.debug.xcconfig"; path = "Target Support Files/Pods-SwiftDemo/Pods-SwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +84,7 @@ D0D02284237266D7004D5F24 /* TestWeakViewController.swift */ = {isa = PBXFileRefe
 			isa = PBXGroup;
 			children = (
 				174BB74123632C4900A2FC24 /* AppDelegate.swift */,
+				C3D4E5F6A7B8C9D0E1F2A3B5 /* SceneDelegate.swift */,
 				174BB75523632C5B00A2FC24 /* ViewController */,
 				174BB74723632C4900A2FC24 /* Main.storyboard */,
 				174BB74A23632C4B00A2FC24 /* Assets.xcassets */,
@@ -252,6 +255,7 @@ D0D02284237266D7004D5F24 /* TestWeakViewController.swift */ = {isa = PBXFileRefe
 				174BB75E23645D9800A2FC24 /* TestModelViewController.swift in Sources */,
 				174BB74623632C4900A2FC24 /* ViewController.swift in Sources */,
 				174BB74223632C4900A2FC24 /* AppDelegate.swift in Sources */,
+				C3D4E5F6A7B8C9D0E1F2A3B4 /* SceneDelegate.swift in Sources */,
 				D00552772374FE4E009B09B7 /* TestAPIViewController.swift in Sources */,
 				D01E25A123717F76005B3ACB /* TestNotificationViewController.swift in Sources */,
 				174BB75A23632D3800A2FC24 /* TestSectionModel.swift in Sources */,
